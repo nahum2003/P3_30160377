@@ -6,7 +6,7 @@
     "express": "^4.18.2",
     "sqlite3": "^5.1.6"
   },
-  "name": "Angel",
+  "name": "Nahum",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "start": "nodemon controllers.js"
   },
   "keywords": [],
-  "author": "Angel",
+  "author": "Nahum",
   "license": "ISC",
   "description": ""
 }

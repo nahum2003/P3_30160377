@@ -1,33 +1,130 @@
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta charset="iso-8559-1"/>
-  <meta name= "description" content="Página para la venta de productos relacionados con la perdida de peso."/>
-  <meta name="keywords" content="html5,javascript,diseño web, salud, perdida de peso, peso, salud, bienestar, ejercicio, vida saludable"/>
-  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
-  <link rel="icon" href="img/favicon.png">
-  <link rel="stylesheet" type="text/css" href="css/update.css">
-  <title>Agregar imagén</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Imagen</title>
+
+	<style type="text/css">
+
+@font-face{
+          font-family:'dar';
+          src:url('/fuentes/GnarlyBoneBlack_PERSONAL_USE_ONLY.otf');
+        }
+	body{
+background-image:url('https://images.pexels.com/photos/3882464/pexels-photo-3882464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+background-size:cover;
+background-attachment:fixed;
+}
+    form{
+    	display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+    	align-items: center;
+    	margin:80px auto;
+    	width:40%;
+    	
+    }
+    input{
+    	padding:10px;
+    	margin:10px;
+    }
+    label{
+    	font:30px 'dar' ;
+    	font-weight: bold;
+    	color:white;
+    }
+   h1{
+   	font:40px 'dar' ;
+   	text-align: center;
+   	line-height: 50px;
+   	color:white;
+   }
+   #destacado{
+   	width:20%;
+   	border-radius:10px 10px 10px 10px;
+   }
+  #divDestacado{
+  	border:1px solid black;
+  	width:70%;
+  	margin:50px auto;
+  	background:rgba(108, 114, 114,.7);
+  }
+  #botones{
+	display:flex;
+	justify-content: flex-end;
+	align-items: center;
+	 border:1px solid white;
+	 background:rgba(0,0,0,.7);
+	 border-top:none;
+	 border-left:none;
+	 border-right:none;
+}
+  #botones a{
+	border-radius:15px 10px 20px 10px;
+	font:30px 'dar';
+	padding:20px;
+	text-decoration: none;
+	color:white;
+	transition: all 1s;
+}
+#botones a:hover{
+transform: translateY(-10px);
+}
+#botonera{
+ display:flex;
+ justify-content:flex-end;
+ align-items:center;
+ font-size:20px;
+ font-weight: bold;
+ color:white;
+ background:rgba(180, 180, 180,.7);
+ border:1px solid black;
+}
+#botonProductos{
+	background:rgb(229, 229, 229);
+	color:black;
+	text-decoration: none;
+	padding:8px;
+	margin:10px;
+	border-radius: 15px 20px 10px 20px;
+	transition:all 1s;
+}
+#botonProductos:hover{
+transform:scale(1.3);
+}
+
+	</style>
+
+
 </head>
 <body>
+
+<div id='botonera'>
+    
+   <a id='botonProductos' href="/">Volver</a>
+
+  </div>
+
+<h1>Agregar Imagen</h1>
+
+<div id='divDestacado'>
+	
+<form action="/addImagen/<%=modelo.producto_id%>" method="post" enctype="multipart/form-data">
+	
+	<label for='imagen'>Imagen</label>
+	
+	<input type="file" name="img" id="img" placeholder="Imagen">
   
-  <section>
-		<div class="form-box">
-			<div class="form-value">
-				<form id="login_form" class="login_form" action="/addPost" method="post">
-					<h2>Agregar Imagen</h2>
-                    <input type="file" name="img" id="img" placeholder="Imagen" class="custom-file-input">
-                    <div class="inputbox">
-                      <input type="text" name="destacado" autocomplete="true" id="destacado">
-                      <label for="descripcion">Destacado</label>
-					</div>
-					<div class="error hidden">
-						<p>Error al iniciar sesion</p>
-					</div>
-					<input type="submit" value="agg Imagen" id="sendImg">
-                    <a href="/productos" class="boton">Volver</a>
-				</form>
-			</div>
-		</div>
-	</section>
+	<label for="destacado">Destacado</label>
+	<select id='destacado' name="destacado">
+		<option value='1'>principal</option>
+		<option value='0'>detalles</option>
+	</select>
+
+	<input type="submit" value="add" id="destacado">
+</form>
+</div>
+
 </body>
 </html>
